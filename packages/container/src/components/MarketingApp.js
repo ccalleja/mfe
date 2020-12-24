@@ -17,7 +17,7 @@ export default () => {
 
     history.listen(onParentNavigate);
     // The empty array means run this effect only once,
-    // first time the app loads
+    // first time the app loads.
   }, []);
 
   return <div ref={ref}/>;
