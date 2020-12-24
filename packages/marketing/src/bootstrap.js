@@ -5,8 +5,12 @@ import {createMemoryHistory, createBrowserHistory} from 'history';
 
 const mount = (el, {
   defaultHistory,
-  onNavigate}) => {
-  const history = defaultHistory || createMemoryHistory();
+  onNavigate,
+  initialPath
+}) => {
+  const history = defaultHistory || createMemoryHistory({
+    initialEntries: [initialPath]
+  });
   // Listen to changes from the container router history
   onNavigate && history.listen(onNavigate);
   ReactDOM.render(<App history={history}/>, el);

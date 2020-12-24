@@ -13,7 +13,7 @@ const devConfig = {
       index: 'index.html',
     },
   },
-  output:{
+  output: {
     publicPath: `http://localhost:${port}/`
   },
   plugins: [
