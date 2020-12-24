@@ -3,7 +3,7 @@ import React, {useRef, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 
 // Using the mount and returning a component.
-export default () => {
+export default ({onSignIn}) => {
   const ref = useRef(null);
   const history = useHistory();
 
@@ -13,7 +13,8 @@ export default () => {
       onNavigate: ({pathname: nextPathname}) => {
         const {pathname} = history.location;
         pathname !== nextPathname && history.push(nextPathname);
-      }
+      },
+      onSignIn
     });
 
     history.listen(onParentNavigate);
